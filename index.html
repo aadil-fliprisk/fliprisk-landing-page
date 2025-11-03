@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Fliprisk — Stealth Mode</title>
+<title>Fliprisk</title>
 
 <style>
     :root {
@@ -38,7 +38,6 @@
         to   { opacity: 1; transform: translateY(0); }
     }
 
-    /* HERO */
     .hero {
         text-align: center;
         padding: 80px 20px;
@@ -72,7 +71,6 @@
         color: var(--subtext);
     }
 
-    /* Section Card */
     section {
         background: var(--soft-card);
         padding: 28px 30px;
@@ -110,6 +108,27 @@
         color: white;
     }
 
+    /* Founder row */
+    .founder-row {
+        display: flex;
+        align-items: center;
+        gap: 18px;
+        margin-bottom: 24px;
+    }
+
+    .founder-photo {
+        width: 120px;
+        border-radius: 12px;
+        flex-shrink: 0;
+    }
+
+    @media (max-width: 600px) {
+        .founder-row {
+            flex-direction: column;
+            text-align: center;
+        }
+    }
+
     /* Contact */
     .contact-box {
         margin-top: 20px;
@@ -138,18 +157,6 @@
         margin-top: 20px;
     }
 
-    /* MOBILE */
-    @media (max-width: 600px) {
-        .hero h1 {
-            font-size: 34px;
-        }
-        .hero p {
-            font-size: 16px;
-        }
-        section {
-            padding: 22px 22px;
-        }
-    }
 </style>
 </head>
 
@@ -157,7 +164,6 @@
 
 <div class="container">
 
-    <!-- HERO -->
     <div class="hero">
         <h1><span>Fliprisk</span></h1>
         <p>
@@ -165,13 +171,12 @@
         </p>
     </div>
 
-    <!-- What We’re Building -->
     <section>
         <h2>What We’re Building</h2>
         <p>
             Fliprisk is currently building in stealth as we develop a next-generation 
-            infrastructure layer that blends heuristics, AI-first intelligence, deep crypto-native 
-            systems to secure transactional workflows.  
+            infrastructure layer that blends heuristics, AI-first intelligence, and deep crypto-native 
+            systems to secure transactional workflows.
         </p>
         <p>
             We’re keeping technical and product details private until launch, but 
@@ -180,24 +185,31 @@
         </p>
     </section>
 
-    <!-- Founders -->
     <section>
-        <h2>Founders</h2>
+        <h2>Meet the Team</h2>
 
-        <p>
-            <strong>Aadil Baeg</strong> — Software Engineer at Coinbase.  
-            Specializes in crypto backend systems, risk infrastructure, and secure 
-            large-scale services powering institutional-grade products.
-        </p>
+        <div class="founder-row">
+            <img src="https://raw.githubusercontent.com/aadil-fliprisk/fliprisk-landing-page/main/Screenshot_20250804_132522_Instagram.jpg" 
+                 alt="Aadil Baeg" class="founder-photo">
+            <p>
+                <strong>Aadil Baeg</strong> - Software Engineer at Coinbase.  
+                Specializes in crypto backend systems, risk infrastructure, and secure 
+                large-scale services powering institutional-grade products.
+            </p>
+        </div>
 
-        <p>
-            <strong>Praveen Fulera</strong> — Software Engineer at Google.  
-            Specializes in search infrastructure, distributed systems, and 
-            high-reliability backend engineering.
-        </p>
+        <div class="founder-row">
+            <img src="https://raw.githubusercontent.com/aadil-fliprisk/fliprisk-landing-page/main/fulera.png" 
+                 alt="Praveen Fulera" class="founder-photo">
+            <p>
+                <strong>Praveen Fulera</strong> - Software Engineer at Google.  
+                Specializes in search infrastructure, distributed systems, and 
+                high-reliability backend engineering.
+            </p>
+        </div>
+
     </section>
 
-    <!-- Contact -->
     <section>
         <h2>Get in Touch</h2>
         <p>
