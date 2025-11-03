@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>FlipRisk — Stealth Mode</title>
+
+<style>
+    :root {
+        --gold: #c9a86a;
+        --gold-light: #e5d3a3;
+        --dark: #0f0f0f;
+        --soft-card: #141414;
+        --text-light: #eaeaea;
+        --subtext: #b1b1b1;
+        --border: #2a2a2a;
+    }
+
+    body {
+        margin: 0;
+        background: #000000;
+        font-family: "Helvetica Neue", Arial, sans-serif;
+        color: var(--text-light);
+        line-height: 1.55;
+        -webkit-font-smoothing: antialiased;
+    }
+
+    .container {
+        width: 92%;
+        max-width: 1080px;
+        margin: auto;
+        padding: 40px 0;
+        animation: fadeIn 0.8s ease;
+    }
+
+    @keyframes fadeIn {
+        from { opacity: 0; transform: translateY(12px); }
+        to   { opacity: 1; transform: translateY(0); }
+    }
+
+    /* HERO */
+    .hero {
+        text-align: center;
+        padding: 80px 20px;
+        background: #0d0d0d;
+        border-radius: 14px;
+        border: 1px solid var(--border);
+        margin-bottom: 40px;
+        transition: 0.3s ease;
+    }
+
+    .hero:hover {
+        transform: translateY(-4px);
+        box-shadow: 0 6px 20px rgba(0,0,0,0.4);
+    }
+
+    .hero h1 {
+        font-size: 46px;
+        margin-bottom: 12px;
+        font-weight: 700;
+        color: white;
+    }
+
+    .hero h1 span {
+        color: var(--gold);
+    }
+
+    .hero p {
+        font-size: 18px;
+        max-width: 700px;
+        margin: 0 auto;
+        color: var(--subtext);
+    }
+
+    /* Section Card */
+    section {
+        background: var(--soft-card);
+        padding: 28px 30px;
+        margin: 32px 0;
+        border-radius: 12px;
+        border-left: 4px solid var(--gold);
+        border-right: 1px solid var(--border);
+        border-top: 1px solid var(--border);
+        border-bottom: 1px solid var(--border);
+        box-shadow: 0 4px 14px rgba(0,0,0,0.3);
+        transition: 0.3s ease;
+        color: var(--text-light);
+    }
+
+    section:hover {
+        transform: translateY(-3px);
+        box-shadow: 0 6px 20px rgba(0,0,0,0.35);
+    }
+
+    h2 {
+        text-align: left;
+        font-size: 22px;
+        margin-bottom: 10px;
+        color: white;
+    }
+
+    p {
+        text-align: left;
+        font-size: 16px;
+        margin: 6px 0 12px;
+        color: var(--subtext);
+    }
+
+    strong {
+        color: white;
+    }
+
+    /* Contact */
+    .contact-box {
+        margin-top: 20px;
+        padding: 20px;
+        background: #1a1a1a;
+        border-radius: 10px;
+        border: 1px solid #2d2d2d;
+    }
+
+    .contact-box a {
+        color: var(--gold);
+        font-weight: bold;
+        text-decoration: none;
+        word-break: break-word;
+    }
+
+    .contact-box a:hover {
+        text-decoration: underline;
+    }
+
+    footer {
+        text-align: center;
+        padding: 25px 0 35px;
+        color: #888;
+        font-size: 14px;
+        margin-top: 20px;
+    }
+
+    /* MOBILE */
+    @media (max-width: 600px) {
+        .hero h1 {
+            font-size: 34px;
+        }
+        .hero p {
+            font-size: 16px;
+        }
+        section {
+            padding: 22px 22px;
+        }
+    }
+</style>
+</head>
+
+<body>
+
+<div class="container">
+
+    <!-- HERO -->
+    <div class="hero">
+        <h1><span>FlipRisk</span></h1>
+        <p>
+            We’re building an AI-powered crypto infrastructure engineered for real-time protection in transactional workflows, currently in stealth. A new foundation for trust, intelligence, and secure digital asset operations.
+        </p>
+    </div>
+
+    <!-- What We’re Building -->
+    <section>
+        <h2>What We’re Building</h2>
+        <p>
+            FlipRisk is currently building in stealth as we develop a next-generation 
+            infrastructure layer that blends heuristics, AI-first intelligence, deep crypto-native 
+            systems to secure transactional workflows.  
+        </p>
+        <p>
+            We’re keeping technical and product details private until launch, but 
+            we’re collaborating with select investors and early partners 
+            aligned with long-term crypto infrastructure and intelligence.
+        </p>
+    </section>
+
+    <!-- Founders -->
+    <section>
+        <h2>Founders</h2>
+
+        <p>
+            <strong>Aadil Baeg</strong> — Software Engineer at Coinbase.  
+            Specializes in crypto backend systems, risk infrastructure, and secure 
+            large-scale services powering institutional-grade products.
+        </p>
+
+        <p>
+            <strong>Praveen Fulera</strong> — Software Engineer at Google.  
+            Specializes in search infrastructure, distributed systems, and 
+            high-reliability backend engineering.
+        </p>
+    </section>
+
+    <!-- Contact -->
+    <section>
+        <h2>Get in Touch</h2>
+        <p>
+            Join our early access waitlist or connect with the founding team using the email below. We’d love to collaborate.
+        </p>
+
+        <div class="contact-box">
+            <p>Email:  
+                <a href="mailto:contact@fliprisk.ai">contact@fliprisk.ai</a>
+            </p>
+        </div>
+    </section>
+
+    <footer>
+        © 2025 FlipRisk — Stealth Mode
+    </footer>
+
+</div>
+
+</body>
+</html>
