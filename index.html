@@ -38,10 +38,10 @@
         to   { opacity: 1; transform: translateY(0); }
     }
 
-    /* ✅ Optimized hero section */
+    /* ✅ Modern Compact Hero */
     .hero {
         text-align: center;
-        padding: 40px 20px; /* reduced (was 80px) */
+        padding: 32px 20px; /* very compact */
         background: #0d0d0d;
         border-radius: 14px;
         border: 1px solid var(--border);
@@ -54,33 +54,42 @@
         box-shadow: 0 6px 20px rgba(0,0,0,0.4);
     }
 
-    /* ✅ Smaller logo */
-    .logo {
-        width: 140px; /* reduced (was 200px) */
-        max-width: 70%;
-        height: auto;
-        margin-bottom: 12px; /* reduced (was 24px) */
-        filter: drop-shadow(0 0 6px rgba(0,0,0,0.6));
+    /* ✅ Horizontal row */
+    .hero-row {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 14px;
     }
 
-    /* ✅ Tighter heading */
-    .hero h1 {
-        font-size: 36px; /* reduced (was 46px) */
-        margin-bottom: 6px; /* reduced (was 12px) */
+    /* ✅ Small icon-style logo */
+    .logo-small {
+        width: 50px;
+        height: auto;
+        filter: drop-shadow(0 0 6px rgba(0,0,0,0.6));
+        flex-shrink: 0;
+    }
+
+    .hero-row h1 {
+        font-size: 40px;
         font-weight: 700;
+        margin: 0;
         color: white;
     }
 
-    .hero h1 span {
+    .hero-row h1 span {
         color: var(--gold);
     }
 
+    /* ✅ Optional subtitle (kept hidden — uncomment if needed) */
+    /*
     .hero p {
         font-size: 18px;
         max-width: 700px;
-        margin: 0 auto;
+        margin: 10px auto 0;
         color: var(--subtext);
     }
+    */
 
     section {
         background: var(--soft-card);
@@ -171,9 +180,13 @@
 
 <div class="container">
 
+    <!-- ✅ Compact hero: logo + title in one line -->
     <div class="hero">
-        <img src="https://raw.githubusercontent.com/aadil-fliprisk/fliprisk-landing-page/main/logo_1.png" alt="Fliprisk AI Logo" class="logo">
-        <h1><span>Fliprisk AI</span></h1>
+        <div class="hero-row">
+            <img src="https://raw.githubusercontent.com/aadil-fliprisk/fliprisk-landing-page/main/logo_1.png" 
+                 alt="Fliprisk AI Logo" class="logo-small">
+            <h1><span>Fliprisk AI</span></h1>
+        </div>
     </div>
 
     <section>
