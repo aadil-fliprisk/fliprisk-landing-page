@@ -38,9 +38,10 @@
         to   { opacity: 1; transform: translateY(0); }
     }
 
+    /* ✅ Optimized hero section */
     .hero {
         text-align: center;
-        padding: 80px 20px;
+        padding: 40px 20px; /* reduced (was 80px) */
         background: #0d0d0d;
         border-radius: 14px;
         border: 1px solid var(--border);
@@ -53,18 +54,19 @@
         box-shadow: 0 6px 20px rgba(0,0,0,0.4);
     }
 
-    /* ✅ Larger + Responsive Logo */
+    /* ✅ Smaller logo */
     .logo {
-        width: 200px;           /* Large on desktop */
-        max-width: 70%;         /* Shrinks on mobile */
-        height: auto;           /* Preserve ratio */
-        margin-bottom: 24px;
+        width: 140px; /* reduced (was 200px) */
+        max-width: 70%;
+        height: auto;
+        margin-bottom: 12px; /* reduced (was 24px) */
         filter: drop-shadow(0 0 6px rgba(0,0,0,0.6));
     }
 
+    /* ✅ Tighter heading */
     .hero h1 {
-        font-size: 46px;
-        margin-bottom: 12px;
+        font-size: 36px; /* reduced (was 46px) */
+        margin-bottom: 6px; /* reduced (was 12px) */
         font-weight: 700;
         color: white;
     }
@@ -171,13 +173,7 @@
 
     <div class="hero">
         <img src="https://raw.githubusercontent.com/aadil-fliprisk/fliprisk-landing-page/main/logo_1.png" alt="Fliprisk AI Logo" class="logo">
-
         <h1><span>Fliprisk AI</span></h1>
-        <p>
-            We’re building an AI-powered crypto infrastructure engineered for real-time 
-            protection in transactional workflows. 
-            A new foundation for trust, intelligence, and secure digital asset operations for institutions.
-        </p>
     </div>
 
     <section>
