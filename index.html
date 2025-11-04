@@ -53,6 +53,15 @@
         box-shadow: 0 6px 20px rgba(0,0,0,0.4);
     }
 
+    /* ✅ Larger + Responsive Logo */
+    .logo {
+        width: 200px;           /* Large on desktop */
+        max-width: 70%;         /* Shrinks on mobile */
+        height: auto;           /* Preserve ratio */
+        margin-bottom: 24px;
+        filter: drop-shadow(0 0 6px rgba(0,0,0,0.6));
+    }
+
     .hero h1 {
         font-size: 46px;
         margin-bottom: 12px;
@@ -108,7 +117,6 @@
         color: white;
     }
 
-    /* Founder layout (side by side always) */
     .founder-row {
         display: flex;
         align-items: center;
@@ -122,7 +130,6 @@
         flex-shrink: 0;
     }
 
-    /* For small screens, reduce photo size but keep layout horizontal */
     @media (max-width: 600px) {
         .founder-photo {
             width: 90px;
@@ -163,10 +170,12 @@
 <div class="container">
 
     <div class="hero">
+        <img src="https://raw.githubusercontent.com/aadil-fliprisk/fliprisk-landing-page/main/logo_1.png" alt="Fliprisk AI Logo" class="logo">
+
         <h1><span>Fliprisk AI</span></h1>
         <p>
             We’re building an AI-powered crypto infrastructure engineered for real-time 
-            protection in transactional workflows, currently in stealth. 
+            protection in transactional workflows. 
             A new foundation for trust, intelligence, and secure digital asset operations for institutions.
         </p>
     </div>
@@ -174,7 +183,7 @@
     <section>
         <h2>What We’re Building</h2>
         <p>
-            Fliprisk AI is currently in stealth, building next-generation infrastructure that
+            Fliprisk AI is building the next-generation infrastructure that
             combines in-house heuristics, AI, and proprietary crypto-native systems to help enterprises 
             and institutions protect users across transactional workflows.
         </p>
