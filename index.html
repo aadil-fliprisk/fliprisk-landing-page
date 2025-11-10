@@ -1,71 +1,146 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
 <head>
-<meta charset="UTF-8" />
-<meta name="viewport" content="width=device-width, initial-scale=1.0" />
-<title>Fliprisk AI</title>
-<style>
-    :root {
-        --gold: #d4af37;
-        --gold-soft: #e8d59a;
-        --bg-dark: #0a0a0a;
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Fliprisk AI</title>
+  <style>
+    /* Minimal, smooth black → gold aesthetic */
+    :root{
+      --gold-1: #b8860b; /* dark goldenrod */
+      --gold-2: #ffd873; /* warm gold */
+      --bg-black: #050505;
+      --glass: rgba(255,255,255,0.03);
+      --card-blur: 8px;
+      --radius: 16px;
+      --max-width: 880px;
+      font-family: Inter, ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial;
+      color-scheme: dark;
     }
 
-    body {
-        margin: 0;
-        padding: 0;
-        background: var(--bg-dark);
-        color: var(--gold-soft);
-        font-family: "Cormorant Garamond", serif;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        height: 100vh;
-        overflow: hidden;
+    html,body{
+      height:100%;
+      margin:0;
+      background: radial-gradient(1200px 600px at 10% 20%, rgba(255,216,128,0.06), transparent 8%),
+                  radial-gradient(800px 400px at 90% 80%, rgba(184,134,11,0.04), transparent 6%),
+                  var(--bg-black);
+      -webkit-font-smoothing:antialiased;
+      -moz-osx-font-smoothing:grayscale;
+      display:grid;
+      place-items:center;
     }
 
-    .container {
-        text-align: center;
-        padding: 40px 60px;
-        border-radius: 24px;
-        backdrop-filter: blur(18px);
-        background: rgba(255, 255, 255, 0.04);
-        border: 1px solid rgba(255, 255, 255, 0.08);
-        box-shadow: 0 0 80px rgba(0, 0, 0, 0.6);
-        animation: fadeIn 1.4s ease;
+    .container{
+      width:100%;
+      max-width:var(--max-width);
+      padding:48px 28px;
+      box-sizing:border-box;
+      display:flex;
+      align-items:center;
+      justify-content:center;
     }
 
-    h1 {
-        font-size: 4rem;
-        margin-bottom: 20px;
-        letter-spacing: 3px;
-        color: var(--gold);
-        animation: slideDown 1.2s ease;
+    .card{
+      width:100%;
+      text-align:center;
+      background: linear-gradient(180deg, rgba(255,255,255,0.02), rgba(0,0,0,0.06));
+      border: 1px solid rgba(255, 215, 0, 0.06);
+      padding:48px 40px;
+      border-radius:var(--radius);
+      backdrop-filter: blur(var(--card-blur));
+      box-shadow: 0 10px 30px rgba(0,0,0,0.6), inset 0 1px 0 rgba(255,255,255,0.02);
     }
 
-    p {
-        font-size: 1.4rem;
-        margin: 10px 0;
-        opacity: 0.9;
-        animation: fadeIn 1.6s ease;
+    .logo{
+      font-weight:700;
+      letter-spacing:0.06em;
+      font-size: clamp(28px, 4.6vw, 44px);
+      margin:0 0 8px 0;
+      color: linear-gradient(90deg,var(--gold-1),var(--gold-2)); /* fallback */
+      position:relative;
+      display:inline-block;
+      padding:6px 14px;
+      border-radius:12px;
+      background: linear-gradient(90deg, rgba(184,134,11,0.12), rgba(255,216,128,0.06));
+      -webkit-background-clip: text;
+      background-clip: text;
+      color: var(--gold-2);
+      text-shadow: 0 1px 0 rgba(0,0,0,0.6), 0 6px 22px rgba(184,134,11,0.05);
     }
 
-    @keyframes fadeIn {
-        from { opacity: 0; }
-        to { opacity: 1; }
+    .tag{
+      margin:12px 0 18px 0;
+      font-size:16px;
+      color: rgba(255,255,255,0.78);
+      opacity:0.95;
     }
 
-    @keyframes slideDown {
-        from { opacity: 0; transform: translateY(-20px); }
-        to { opacity: 1; transform: translateY(0); }
+    .email{
+      display:inline-block;
+      margin-top:18px;
+      font-size:14px;
+      color: #f8edd6;
+      padding:10px 16px;
+      border-radius:10px;
+      background: linear-gradient(90deg, rgba(184,134,11,0.12), rgba(255,216,128,0.04));
+      border: 1px solid rgba(255,215,0,0.08);
+      text-decoration:none;
+      transition: transform 220ms ease, box-shadow 220ms ease;
     }
-</style>
+
+    .email:hover{
+      transform: translateY(-3px);
+      box-shadow: 0 8px 30px rgba(184,134,11,0.12);
+    }
+
+    .accent{
+      display:block;
+      height:8px;
+      width:72px;
+      margin:28px auto 0;
+      border-radius:999px;
+      background: linear-gradient(90deg, var(--gold-1), var(--gold-2));
+      filter: blur(8px);
+      opacity:0.95;
+    }
+
+    /* Subtle animated sheen */
+    .card::after{
+      content:"";
+      position:absolute;
+      left:0;right:0;top:0;bottom:0;
+      border-radius:calc(var(--radius) + 4px);
+      pointer-events:none;
+      background: linear-gradient(120deg, rgba(255,255,255,0.02) 0%, rgba(255,255,255,0.025) 40%, rgba(255,255,255,0.01) 60%, rgba(255,255,255,0.02) 100%);
+      mix-blend-mode: screen;
+      opacity:0.6;
+      transform: translateX(-30%);
+      animation: float-sheen 8s linear infinite;
+    }
+
+    @keyframes float-sheen{
+      0%{ transform: translateX(-30%) rotate(-6deg); }
+      50%{ transform: translateX(30%) rotate(-6deg); }
+      100%{ transform: translateX(-30%) rotate(-6deg); }
+    }
+
+    /* responsive tweaks */
+    @media (max-width:520px){
+      .card{ padding:34px 20px }
+      .logo{ font-size:26px }
+      .tag{ font-size:15px }
+    }
+
+  </style>
 </head>
 <body>
-    <div class="container">
-        <h1>Fliprisk AI</h1>
-        <p>Currently in Stealth</p>
-        <p>Connect with us → <strong style="letter-spacing:1px;">contact@fliprisk.ai</strong></p>
+  <div class="container">
+    <div class="card" style="position:relative;">
+      <h1 class="logo">Fliprisk AI</h1>
+      <div class="tag">Currently in Stealth</div>
+      <a class="email" href="mailto:contact@fliprisk.ai">Reach out to us at contact@fliprisk.ai</a>
+      <span class="accent" aria-hidden="true"></span>
     </div>
+  </div>
 </body>
 </html>
